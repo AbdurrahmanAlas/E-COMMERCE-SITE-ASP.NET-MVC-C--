@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1259
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tıcaret2020", "Tıcaret2020\Tıcaret2020.csproj", "{6ED28769-1457-48E9-80D1-061059065B0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6ED28769-1457-48E9-80D1-061059065B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ED28769-1457-48E9-80D1-061059065B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ED28769-1457-48E9-80D1-061059065B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ED28769-1457-48E9-80D1-061059065B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9C6FB19-2BFD-4C03-881C-D581740A39B8}
+	EndGlobalSection
+EndGlobal
