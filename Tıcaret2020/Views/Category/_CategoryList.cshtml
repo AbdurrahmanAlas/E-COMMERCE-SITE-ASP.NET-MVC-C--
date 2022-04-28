@@ -1,0 +1,12 @@
+﻿@using Tıcaret2020.Models
+@model IEnumerable<CategoryModel>
+<li><a href="/Home/Product"><span class="btn btn-primary" style="font-family:Tahoma;color:white"> ☰   ÜRÜN KATEGORİLERİ</span></a></li>
+<br />
+
+
+@foreach (var item in Model)
+{
+    <li><a href="/Home/ProductList/@item.Id"><span style="color:blue;font-family:'Roboto Slab'"> ➤ @item.Name </span>( @item.Count ) </a></li>
+}
+
+

@@ -1,0 +1,43 @@
+﻿
+
+@{
+    ViewBag.Title = "partial1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="login-form login-form-left">
+
+    <div class="agile-row">
+
+        <br />
+        <h2 style="color:blue ;margin-left:400px;">📝 Kayıt Ol</h2>
+        <br />
+        <div class="login-agileits-top" style="margin-left:400px;">
+            <form method="post" ">
+                @*<input type="text" class="form-control" name="vatAd" Placeholder="Firma Adınız" required="" />
+                    <br />*@
+                <input type="text" class="form-control" name="vatEmail" Placeholder="Kullanıcı Adınız" required="" style="max-width:40% " />
+                <br />
+
+
+
+                <input type="password" class="form-control" name="vatParola" Placeholder="Sıfre" required="" style="max-width:40%" />
+                <br />
+                <input type="text" class="form-control" name="TelefonNo" Placeholder="Telefon Numaranız" required="" style="max-width:40%" />
+                <br />
+
+
+                <br />
+                <div class="login-check">
+                    <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i> <a href="#"> &amp;Beni Hatırla</a></label>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Kayıt Ol">
+                <input type="text" name="Role" value="Kullanıcı" style="width:0px;" />
+                <br />
+                <br />
+                <br />
+            </form>
+        </div>
+    </div>
+</div>
+

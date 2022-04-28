@@ -1,0 +1,37 @@
+﻿@using Tıcaret2020.Entity
+@model IEnumerable<Product>
+
+
+
+
+<div id="myCarousel" class="carousel slide homCar">
+    <div class="carousel-inner">
+        <div class="item active">
+            <img style="width:100%" src="~/Content/t/eticar.jpg" alt="">
+            <div class="carousel-caption">
+                <h4 style="font-family:Cooper;color:#000000"> ALAS TİCARET           </h4>
+           
+                <p style="font-family:'Bauhaus 93'"><span >Online Ticarette güvenilir adresiniz...</span></p>
+            </div>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div class="item">
+                <a href="/Home/ProductDetails/@item.Id">    <img style="max-width:680px;max-height:390px;min-height:380px;min-width:650px;" src="~/Content/t/@item.Image"></a>
+                <div class="carousel-caption">
+                    <h4>@item.Name</h4>
+                    <p><span  style="color:blue">@item.Price ₺</span></p>
+                </div>
+            </div>
+        }
+
+
+
+
+
+
+
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+</div>

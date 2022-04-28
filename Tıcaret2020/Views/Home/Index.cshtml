@@ -1,0 +1,70 @@
+﻿
+@using Tıcaret2020.Entity
+@model IEnumerable<Product>
+
+
+<div class="row col-md-12">
+    <div id="sidebar" class="span3">
+        <div class="well well-small">
+            <ul class="nav nav-list">
+                @Html.Action("_CategoryList", "Category")
+                <li style="border:0"> &nbsp;</li>
+                @Html.Action("Summary", "Cart")
+            </ul>
+        </div>
+
+        <div class="well well-small"><a href="#"><img src="/siteticaret/assets/img/paypal.jpg" alt="payment method paypal"></a></div>
+
+        <a class="btn btn-primary" href="/Home/Product" @*style="color:#000000">   ALAS TİCARET*@  <br><small style="color:white; font-family:Tahoma;font-weight:bold;font-size:108%"> ⚪  BÜYÜK İNDİRİMLER MAĞAZAMIZDA </small></a>
+        <br>
+        <br>
+        @Html.Action("_FeaturedProductList", "Home")
+
+    </div>
+    <div class="span9">
+        <div class="well np">
+            @Html.Action("Slider", "Home")
+
+        </div>
+        <div class="well np">
+        @Html.Action("SliderKücük", "Home")
+    </div>
+        <!--
+    New Products
+    -->
+
+        <h3 class="btn btn-success"style="font-size:19px;">ÜRÜNLERİMİZ </h3>
+        <hr class="soften" />
+
+
+        <ul class="thumbnails">
+
+            @foreach (var item in Model)
+            {
+                <li class="span3">
+                    <div class="thumbnail">
+
+
+                        <a href="/Home/ProductDetails/@item.Id"><img src="~/Content/t/@item.Image" style="max-width:207px;max-height:220px; min-width:207px;min-height:220px;" alt=""></a>
+                        <div class="caption cntr">
+                            <h3 style="color:#0200c2"><span>@item.Name</span></h3>
+                            <h3 style="color:red"><span>@item.Price ₺</span></h3>
+                            <h4><a class="btn btn-primary" href="/Home/ProductDetails/@item.Id" title="add to cart" style="font-family:Tahoma">➔  İncele </a></h4>
+
+                            <br class="clr">
+                        </div>
+                    </div>
+                </li>
+            }
+
+
+        </ul>
+    </div>
+        </div>
+        <!--
+        Featured Products
+        -->
+        
+
+       
+ 

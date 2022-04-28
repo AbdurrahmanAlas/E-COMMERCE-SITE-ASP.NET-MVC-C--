@@ -1,0 +1,65 @@
+﻿@using Tıcaret2020.Entity
+@model IEnumerable<Product>
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div id="sidebar" class="span3">
+        <div class="well well-small">
+            <ul class="nav nav-list">
+                @Html.Action("_CategoryList", "Category")
+                <li style="border:0"> &nbsp;</li>
+                @Html.Action("Summary", "Cart")
+            </ul>
+        </div>
+
+   
+        <div class="well well-small"><a href="#"><img src="/siteticaret/assets/img/paypal.jpg" alt="payment method paypal"></a></div>
+
+        <a class="shopBtn btn-block" href="#">Upcoming products <br><small>Click to view</small></a>
+        <br>
+        <br>
+        @Html.Action("_FeaturedProductList", "Home")
+
+
+    </div>
+    <div class="span9">
+        <!--
+        New Products
+        -->
+
+        <h3>Ürünler </h3>
+
+        <ul class="thumbnails">
+            @foreach (var item in Model)
+            {
+                <li class="span3">
+                    <div class="thumbnail">
+                        <a href="product_details.html" class="overlay"></a>
+                        <a class="zoomTool" href="/Home/ProductDetails/@item.Id" title="add to cart" style="display: none;"><span class="icon-search"></span>  DETAY</a>
+                        <a href="product_details.html"><img src="~/Content/t/@item.Image" style="max-width:207px;max-height:240px; min-width:207px;min-height:240px;" alt=""></a>
+                        <div class="caption cntr">
+                            <h3 style="color:#0200c2"><span>@item.Name</span></h3>
+                            <p><strong> @item.Price ₺</strong></p>
+                            <h4><a class="btn btn-primary" href="/Home/ProductDetails/@item.Id" title="add to cart" style="font-family:Tahoma;color:white">➔  İncele </a></h4>
+
+                            <br class="clr">
+                        </div>
+                    </div>
+                </li>
+
+            }
+
+
+
+
+        </ul>
+    </div>
+
+
+</div>
+
+

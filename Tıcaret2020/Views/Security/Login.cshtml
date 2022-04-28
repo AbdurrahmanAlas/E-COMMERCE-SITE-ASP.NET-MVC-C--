@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Tıcaret2020.Entity.Kullanıcı
+
+
+<div style="margin-left:350px">
+
+
+
+
+
+
+    <div>
+
+
+
+
+        <h2>Giris yap</h2>
+        @ViewBag.mesaj
+        @using (Html.BeginForm("Login", "Security", FormMethod.Post))
+        {
+
+            @*<div style="margin-left:70px;"> <img src="~/Content/ımage/kayıt1.jpg" alt="" style="width:180px;height:140px;"></div>*@
+
+            <div class=" w3l-form-group">
+
+                <div class="group">
+                    <i class="fas fa-user"></i>
+
+                    @Html.TextBoxFor(m => m.vatEmail, new { @class = "form-control", placeholder = "Kullanıcı Adı", style = "max-width:35%" })
+                </div>
+            </div>
+            <br />
+            <div class=" w3l-form-group">
+
+                <div class="group">
+                    <i class="fas fa-unlock"></i>
+
+                    @Html.TextBoxFor(m => m.vatParola, new { @class = "form-control", placeholder = "Şifre", style = "max-width:35%" })
+                </div>
+            </div>
+            <div class="forgot">
+                <a href="#">Şifremi unuttum</a>
+                <p><input type="checkbox">Beni hatırla</p>
+            </div>
+            <button type="submit">Giris yap</button>
+
+        }
+        <p>
+            Bir hesabınız yok mu?
+            <li class="btn btn-info"><a href="~/Security/partial1/" style="color:darkblue">< Kayıt Ol</a></li>
+        </p>
+
+
+        <br /><br />
+        <br /><br />
+        <br />
+
+    </div>
+
+
+
+</div>
+
+
+

@@ -1,0 +1,96 @@
+﻿@using Tıcaret2020.Entity
+@model Product
+
+
+<div class="row">
+    <div id="sidebar" class="span3">
+        <div class="well well-small">
+            <ul class="nav nav-list">
+                @Html.Action("_CategoryList", "Category")
+                <li style="border:0"> &nbsp;</li>
+                @Html.Action("Summary", "Cart")
+            </ul>
+        </div>
+
+        
+        <div class="well well-small"><a href="#"><img src="/siteticaret/assets/img/paypal.jpg" alt="payment method paypal"></a></div>
+
+        <a class="shopBtn btn-block" href="#">Upcoming products <br><small>Click to view</small></a>
+        <br>
+        <br>
+        @Html.Action("_FeaturedProductList", "Home")
+
+    </div>
+    <div class="span9">
+        <ul class="breadcrumb">
+            <li><a href="/Home/Index">AnaSayfa</a> <span class="divider">/</span></li>
+            <li><a href="/Home/Product">Ürünler</a> <span class="divider">/</span></li>
+            <li class="active">Ürün Detay</li>
+        </ul>
+        <div class="well well-small">
+            <div class="row-fluid">
+                <div class="span5">
+                    <div id="myCarousel" class="carousel slide cntr">
+                        <div class="carousel-inner">
+                            <div class="item">
+                                <a href="#"> <img src="~/Content/t/@Model.Image" alt="" style="width:100%"></a>
+                            </div>
+                            <div class="item active">
+                                <a href="#"> <img src="~/Content/t/@Model.Image" alt="" style="width:100%"></a>
+                            </div>
+                            <div class="item">
+                                <a href="#"> <img src="~/Content/t/5.jpg" alt="" style="width:100%"></a>
+                                <a href="#"> <img src="" alt="" style="width:100%"></a>
+                            </div>
+                        </div>
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+                    </div>
+                </div>
+                <div class="span7">
+                    <h2 style="color:blue"><span>@Model.Name</span></h2>
+                    <hr class="soft">
+                    @using (Html.BeginForm("AddToCart", "Cart", new { @class = "form-horizontal qtyFrm" }))
+                    {
+
+                        @Html.HiddenFor(i => i.Id)
+
+
+                            <div class="control-group">
+                                <h2  style="color:red" ><span>@Model.Price ₺</span></h2>
+
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label"><span>Color</span></label>
+                                <div class="controls">
+                                    <select class="span11">
+                                        <option>Red</option>
+                                        <option>Purple</option>
+                                        <option>Pink</option>
+                                        <option>Red</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <h4 style="color:forestgreen">Stokta:@Model.Stock Adet</h4>
+                            <p>
+                                @Model.Description
+                            </p><p>
+                                <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span>Sepete ekle</button>
+                            </p>
+                       
+
+
+
+                    }
+
+                </div>
+            </div>
+            <hr class="softn clr">
+
+
+            
+
+        </div>
+    </div>
+</div>
